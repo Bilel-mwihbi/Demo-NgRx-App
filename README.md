@@ -1,27 +1,33 @@
-# DemoApp
+# Demo NgRx App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
+A sample app to try out NgRx and to practice its main concepts. 
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Display users list
 
-## Code scaffolding
+## How To install this repository
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+We can install the master branch using the following commands:
 
-## Build
+```bash
+  git clone https://github.com/Bilel-mwihbi/Demo-NgRx-App.git
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+After that we do the following commands to install the required packages
 
-## Running unit tests
+```bash
+  cd Demo-NgRx-App
+  npm install 
+```    
+## Tech Stack
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Client:** Angular, NgRx.
 
-## Running end-to-end tests
+**Server:** we used the [JSON Placeholder ](https://jsonplaceholder.typicode.com/) for fake API testing.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## References
 
-## Further help
+- [Angular NgRx: Getting Started Course](https://app.pluralsight.com/library/courses/angular-ngrx-getting-started/table-of-contents).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [NgRx documentaion](https://ngrx.io/guide/store).

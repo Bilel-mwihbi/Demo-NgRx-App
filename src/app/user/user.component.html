@@ -1,0 +1,67 @@
+<div *ngIf="errorMsg">
+    error {{ errorMsg }}
+</div>
+<div *ngIf=" errorMsg == null" class="card">
+    <div class="card-header">
+        <h1>Users list</h1>
+    </div>
+    <div class="row">
+        <!-- users list -->
+        <div class="col">
+            <div class="card-body"
+                *ngIf="users?.length">
+                <div class="list-group">
+                    <button class="list-group-item list-group-item-action rounded-0 "
+                            *ngFor="let user of users"
+                            [ngClass]="{'active': user.id == selectedUser.id}"
+                            (click)="onSelectUser(user.id)" 
+                            >{{ user.username  }}
+                            <ng-container *ngIf=" isDisabled">
+                            [ {{ user.phone }} ]
+                            </ng-container>
+                    </button>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="form-check col-md-7">
+                        <label>
+                            <input class="form-check-input"
+                                type="checkbox"
+                                (click)="onToggleButton()"
+                                [checked]="isDisabled">
+                                Display users phone
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- selected user -->
+        <div class="col">
+            <div *ngIf="selectedUser.id != -1 " class="card p-2" >
+                <div class="card-header">
+                    {{ selectedUser.name | uppercase }} 
+                </div>
+                <div class="card-body">
+                    <form>
+                        <fieldset>
+                            <div class="form-group row mb-2">
+                                <label class="col-md-3 col-form-label">Name</label>
+                                <div class="col-md-9">
+                                    <input class="form-control" [value]="selectedUser.name"  type="text"/>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label class="col-md-3 col-form-label">Phone number</label>
+                                <div class="col-md-9">
+                                    <input class="form-control" [value]="selectedUser.phone" type="tel"/>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>    
+            </div>
+        </div>
+    </div>
+</div>
+
